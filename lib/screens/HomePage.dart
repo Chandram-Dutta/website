@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:website/widgets/CardNameAndPhoto.dart';
 import 'package:website/widgets/NavBar.dart';
 
 class HomePage extends StatelessWidget {
@@ -18,10 +19,15 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [NavBar()],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              NavBar(),
+              CardNameAndPhoto(),
+            ],
+          ),
         ),
       ),
     );

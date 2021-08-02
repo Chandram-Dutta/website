@@ -23,6 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  avatar_glow: ^2.0.1
   cupertino_icons: ^1.0.2
   url_launcher: ^6.0.9
 
@@ -44,7 +45,7 @@ flutter:
     - assets/icons/ChandramPhoto.jpg
     - assets/icons/github.png
     - assets/icons/instagram.png
-    - assets/icons/twitter.png 
+    - assets/icons/twitter.png
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
