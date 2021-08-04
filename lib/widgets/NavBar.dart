@@ -54,54 +54,48 @@ var listElements = <Widget>[
   ),
   Padding(
     padding: const EdgeInsets.all(12.0),
-    child: Container(
-      decoration: BoxDecoration(
-        color: Colors.red[900],
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          IconButton(
-            onPressed: () {
-              sendMail();
-            },
-            icon: Icon(CupertinoIcons.mail),
-            color: Colors.black,
-            tooltip: "Mail Me",
-          ),
-          SizedBox(
-            width: 30,
-          ),
-          IconButton(
-            onPressed: () {
-              launchUrl("https://github.com/Chandram-Dutta");
-            },
-            icon: Image.asset("assets/icons/github.png"),
-            tooltip: "Explore My GitHub Account",
-          ),
-          SizedBox(
-            width: 30,
-          ),
-          IconButton(
-            onPressed: () {
-              launchUrl("https://instagram.com/chandram_dutta");
-            },
-            icon: Image.asset("assets/icons/instagram.png"),
-            tooltip: "My Instagram Photos",
-          ),
-          SizedBox(
-            width: 30,
-          ),
-          IconButton(
-            onPressed: () {
-              launchUrl("https://twitter.com/ChandramDutta");
-            },
-            icon: Image.asset("assets/icons/twitter.png"),
-            tooltip: "My Tweets @ Twitter",
-          ),
-        ],
-      ),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        IconButton(
+          onPressed: () {
+            sendMail();
+          },
+          icon: Icon(CupertinoIcons.mail),
+          color: Colors.black,
+          tooltip: "Mail Me",
+        ),
+        SizedBox(
+          width: 30,
+        ),
+        IconButton(
+          onPressed: () {
+            launchUrl("https://github.com/Chandram-Dutta");
+          },
+          icon: Image.asset("assets/icons/github.png"),
+          tooltip: "Explore My GitHub Account",
+        ),
+        SizedBox(
+          width: 30,
+        ),
+        IconButton(
+          onPressed: () {
+            launchUrl("https://instagram.com/chandram_dutta");
+          },
+          icon: Image.asset("assets/icons/instagram.png"),
+          tooltip: "My Instagram Photos",
+        ),
+        SizedBox(
+          width: 30,
+        ),
+        IconButton(
+          onPressed: () {
+            launchUrl("https://twitter.com/ChandramDutta");
+          },
+          icon: Image.asset("assets/icons/twitter.png"),
+          tooltip: "My Tweets @ Twitter",
+        ),
+      ],
     ),
   )
 ];

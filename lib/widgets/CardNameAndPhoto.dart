@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:avatar_glow/avatar_glow.dart';
+import 'package:glass/glass.dart';
 
 class CardNameAndPhoto extends StatelessWidget {
   const CardNameAndPhoto({
@@ -8,22 +9,22 @@ class CardNameAndPhoto extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-        shadowColor: Colors.white,
-        color: Color.fromRGBO(209, 0, 0, 1),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15.0),
-        ),
-        elevation: 20,
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            if (constraints.maxWidth > 800) {
-              return DesktopCard();
-            } else {
-              return MobileCard();
-            }
-          },
-        ));
+    return Container(
+      padding: EdgeInsets.all(20),
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          if (constraints.maxWidth > 800) {
+            return DesktopCard();
+          } else {
+            return MobileCard();
+          }
+        },
+      ),
+    ).asGlass(
+      frosted: false,
+      tintColor: Colors.black,
+      clipBorderRadius: BorderRadius.circular(25.0),
+    );
   }
 }
 
@@ -32,21 +33,10 @@ class DesktopCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
-      child: Container(
-        alignment: Alignment.center,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: listElemets)
-          ],
-        ),
-      ),
-    );
+    return Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: listElemets);
   }
 }
 
@@ -55,12 +45,7 @@ class MobileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
-      child: Container(
-        child: Column(children: listElemets),
-      ),
-    );
+    return Column(children: listElemets);
   }
 }
 
@@ -68,11 +53,11 @@ var listElemets = <Widget>[
   Padding(
     padding: const EdgeInsets.all(8.0),
     child: AvatarGlow(
-      glowColor: Colors.black,
+      glowColor: Colors.white,
       repeat: true,
       showTwoGlows: true,
       duration: Duration(milliseconds: 1000),
-      endRadius: 115,
+      endRadius: 175,
       child: CircleAvatar(
         foregroundImage: AssetImage("assets/icons/ChandramPhoto.jpg"),
         radius: 75,
@@ -86,6 +71,7 @@ var listElemets = <Widget>[
       style: TextStyle(
         fontSize: 48,
         fontWeight: FontWeight.bold,
+        color: Colors.white,
       ),
     ),
   )

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:website/widgets/CardNameAndPhoto.dart';
+import 'package:website/widgets/CodeDesignerLInes.dart';
 import 'package:website/widgets/NavBar.dart';
 
 class HomePage extends StatelessWidget {
@@ -9,13 +10,15 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        height: 2000,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.bottomCenter,
             end: Alignment.topCenter,
             colors: [
-              Color.fromARGB(1, 0, 58, 150),
               Colors.black,
+              // Color.fromARGB(1, 32, 9, 237),
+              Colors.red,
             ],
           ),
         ),
@@ -26,6 +29,7 @@ class HomePage extends StatelessWidget {
             children: [
               NavBar(),
               CardNameAndPhoto(),
+              CoderDesignerLines(),
             ],
           ),
         ),
